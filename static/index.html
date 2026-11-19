@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keitaro wrapper</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Keitaro wrapper</h1>
+    <nav>
+      <button class="tab active" data-tab="create">Создать кампанию</button>
+      <button class="tab" data-tab="edit">Редактор кампании</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="create">
+      <h2>Новая кампания</h2>
+      <p class="hint">Создастся кампания с двумя потоками: гео → Google, все остальные → выбранный оффер.</p>
+      <div class="field">
+        <label for="c-name">Название</label>
+        <input id="c-name" placeholder="test_ivanov_campaign1" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="c-geo">Гео</label>
+        <input id="c-geo" placeholder="AU или MX,RO" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Оффер</label>
+        <div id="c-offer"></div>
+      </div>
+      <button id="c-submit" class="primary">Создать кампанию</button>
+      <div id="c-msg" class="msg" hidden></div>
+    </section>
+
+    <section id="edit" hidden>
+      <h2>Редактор кампании</h2>
+      <div class="field inline">
+        <input id="e-id" type="number" min="1" placeholder="ID кампании в Keitaro">
+        <button id="e-open" class="primary">Открыть</button>
+      </div>
+      <div id="e-recent" class="recent"></div>
+      <div id="e-msg" class="msg" hidden></div>
+      <div id="e-body"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
